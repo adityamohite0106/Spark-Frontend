@@ -242,14 +242,18 @@ const Dashboard = () => {
     localStorage.setItem("showAlert", showAlert);
   }, [showAlert]);
 
+// New state for notifications
+const [notification, setNotification] = useState({ message: "", type: "" });
+  
   const handleSave = async () => {
     try {
       if (!email) {
         console.error("❌ Email is missing. Cannot save data.");
-        alert("Email is required to save data.");
+        setNotification({ message: "Email is required to save data.", type: "error" });
+        setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
         return;
       }
-
+  
       const updatedData = {
         email,
         profile: { profileImage, profileTitle, bio },
@@ -265,25 +269,21 @@ const Dashboard = () => {
         },
         analytics: { clicksOnLinks, clicksOnShop, iconCounts },
         settings: {
-          notificationsEnabled:
-            dashboardData.settings?.notificationsEnabled ?? true,
+          notificationsEnabled: dashboardData.settings?.notificationsEnabled ?? true,
           privacy: dashboardData.settings?.privacy || "public",
         },
       };
-
+  
       console.log("Sending to backend:", JSON.stringify(updatedData, null, 2));
-
+  
       const response = await axios.put(
         `${API_BASE_URL}/api/dashboard?email=${email}`,
         updatedData,
         { headers: { "Content-Type": "application/json" } }
       );
-
-      console.log(
-        "Response from backend:",
-        JSON.stringify(response.data, null, 2)
-      );
-
+  
+      console.log("Response from backend:", JSON.stringify(response.data, null, 2));
+  
       setDashboardData((prevData) => {
         const newData = {
           ...prevData,
@@ -294,15 +294,18 @@ const Dashboard = () => {
         console.log("Updated dashboardData:", JSON.stringify(newData, null, 2));
         return newData;
       });
-
-      localStorage.setItem(
-        "dashboardData",
-        JSON.stringify(response.data.dashboard)
-      );
-      alert("Dashboard saved successfully!");
+  
+      localStorage.setItem("dashboardData", JSON.stringify(response.data.dashboard));
+  
+      // Success notification (green)
+      setNotification({ message: "Dashboard saved successfully!", type: "success" });
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
     } catch (error) {
       console.error("❌ Error saving dashboard data:", error);
-      alert("Failed to save dashboard. Please try again.");
+  
+      // Error notification (red)
+      setNotification({ message: "Failed to save dashboard. Please try again.", type: "error" });
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
     }
   };
 
