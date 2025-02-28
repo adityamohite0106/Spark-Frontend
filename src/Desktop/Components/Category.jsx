@@ -27,6 +27,7 @@ const Category = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    console.log("🔍 Token on load:", token);
     if (!token) {
       setError("⚠️ Access denied. Please log in first.");
       setTimeout(() => navigate("/signin"), 2000);
@@ -52,6 +53,8 @@ const Category = () => {
     }
 
     const token = localStorage.getItem("token");
+    console.log("🔍 Token before fetch:", token);
+    console.log("🔍 Sending request with username:", username);
     if (!token) {
       setError("⚠️ No token found. Please log in again.");
       navigate("/signin");
@@ -70,7 +73,9 @@ const Category = () => {
         body: JSON.stringify({ firstName: username }),
       });
 
+      console.log("🔍 Response status:", response.status);
       const data = await response.json();
+      console.log("🔍 Response data:", data);
 
       if (response.ok) {
         console.log("✅ User verified:", data.user);
@@ -80,7 +85,7 @@ const Category = () => {
         setError(data.error || "⚠️ Username not found.");
       }
     } catch (err) {
-      console.error("❌ Error checking user:", err.message);
+      console.error("❌ Fetch error:", err.message);
       setError("⚠️ Something went wrong. Please try again.");
     } finally {
       setLoading(false);
