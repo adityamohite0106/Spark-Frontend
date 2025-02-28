@@ -644,7 +644,13 @@ const [notification, setNotification] = useState({ message: "", type: "" });
   }, [email]);
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container"> 
+       {/* Add Notification UI Here */}
+    {notification.message && (
+        <div className={`notification ${notification.type === "success" ? "success" : "error"}`}>
+          {notification.message}
+        </div>
+      )}
       <Sidebar
         profileImage={profileImage}
         profileTitle={profileTitle}
