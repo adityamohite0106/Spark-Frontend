@@ -3,7 +3,6 @@ import axios from "axios";
 import "../Pages/Dashboard.css";
 import "/src/Mobile/MobileDashboard.css";
 import "/src/Mobile/MobileNav.css";
-
 import Sidebar from "../Components/Sidebar";
 import MobilePreview from "../Components/MobilePreview";
 import ProfileSection from "../Components/ProfileSection";
@@ -244,16 +243,16 @@ const Dashboard = () => {
 
 // New state for notifications
 const [notification, setNotification] = useState({ message: "", type: "" });
-  
+
   const handleSave = async () => {
     try {
       if (!email) {
         console.error("❌ Email is missing. Cannot save data.");
         setNotification({ message: "Email is required to save data.", type: "error" });
-        setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
+        setTimeout(() => setNotification({ message: "", type: "" }), 3000);
         return;
       }
-  
+
       const updatedData = {
         email,
         profile: { profileImage, profileTitle, bio },
@@ -273,17 +272,17 @@ const [notification, setNotification] = useState({ message: "", type: "" });
           privacy: dashboardData.settings?.privacy || "public",
         },
       };
-  
+
       console.log("Sending to backend:", JSON.stringify(updatedData, null, 2));
-  
+
       const response = await axios.put(
         `${API_BASE_URL}/api/dashboard?email=${email}`,
         updatedData,
         { headers: { "Content-Type": "application/json" } }
       );
-  
+
       console.log("Response from backend:", JSON.stringify(response.data, null, 2));
-  
+
       setDashboardData((prevData) => {
         const newData = {
           ...prevData,
@@ -294,18 +293,15 @@ const [notification, setNotification] = useState({ message: "", type: "" });
         console.log("Updated dashboardData:", JSON.stringify(newData, null, 2));
         return newData;
       });
-  
+
       localStorage.setItem("dashboardData", JSON.stringify(response.data.dashboard));
-  
-      // Success notification (green)
+
       setNotification({ message: "Dashboard saved successfully!", type: "success" });
-      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000);
     } catch (error) {
       console.error("❌ Error saving dashboard data:", error);
-  
-      // Error notification (red)
       setNotification({ message: "Failed to save dashboard. Please try again.", type: "error" });
-      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000);
     }
   };
 
