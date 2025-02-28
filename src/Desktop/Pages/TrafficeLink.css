@@ -1,0 +1,56 @@
+/* ✅ Responsive Card Styles */
+.traffic-chart-card {
+    width: 100%;
+    max-width: 900px; /* Default for desktop */
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  /* ✅ Title Styling */
+  .traffic-chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* ✅ Chart Container */
+  .traffic-chart-container {
+    height: 300px; /* Default height */
+  }
+  
+  /* ✅ Responsive Adjustments */
+  @media (max-width: 768px) {
+    .traffic-chart-card {
+        /* max-width: 37% !important; */
+        margin-bottom: 88px!important;
+        height: 239px !important;
+        padding: 10px !important;
+    }
+  
+    .traffic-chart-title {
+      font-size: 16px;
+    }
+  
+    .traffic-chart-container {
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .traffic-chart-card {
+      max-width: 90%;
+      padding: 10px;
+    }
+  
+    .traffic-chart-title {
+      font-size: 14px;
+    }
+  
+    .traffic-chart-container {
+      height: 180px;
+    }
+  }
+  

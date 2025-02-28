@@ -1,0 +1,196 @@
+/* 🌟 General Mobile Styles */
+@media screen and (max-width: 768px) {
+  
+    /* ✅ Container: Make it full width */
+    .container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    /* ✅ Header: Center elements and reduce padding */
+    .header {
+        align-items: center;
+        text-align: center;
+        padding-top: 12px;
+        padding-bottom: 0px;
+    }
+    .entry-title{
+        display: none;
+    }
+    .logo {
+      padding-left: 0;
+      font-size: 26px;
+    margin: none;
+    }
+  
+    .marketplace {
+     display: none;
+    }
+
+  
+    .signup-btn {
+    
+      padding: 8px;
+      font-size: 14px;
+    }
+    .logo img {
+        height: 30px;
+    }
+  
+    /* ✅ Hero Section */
+    .hero {
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .hero-content {
+      width: 100%;
+    }
+  
+    .hero h1 {
+      font-size: 28px;
+    }
+  
+    .hero-img {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .hero-img img {
+      max-width: 100%;
+    }
+  
+    .cta-btn {
+      margin-top: 5px;
+    }
+  
+    /* ✅ Analytics Section */
+    .analytics {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .analytics-img {
+      width: 100%;
+    }
+  
+    .analytics-card {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .analytics-card h3 {
+      font-size: 24px;
+    }
+  
+    /* ✅ Content Section */
+    .content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .content-text {
+      padding-left: 0;
+    }
+  
+    .content-card {
+      width: 100%;
+      margin-right: 0;
+      justify-content: center;
+    }
+  
+    .content-card img {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* ✅ Review Section */
+    .review {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .review-content {
+      padding: 20px;
+    }
+  
+    .review-content h1 {
+      font-size: 26px;
+    }
+  
+    .review-section {
+      grid-template-columns: 1fr; /* Show one review per row */
+    }
+  
+    .review-card1 {
+      width: 100%;
+    }
+  
+    .review-btn {
+      margin-top: 5px;
+    }
+  
+    /* ✅ Integrations */
+    .integrations h2 {
+      font-size: 28px;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .frameimg {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* ✅ Footer */
+    .footer {
+      padding: 10px;
+    }
+  
+    .footer-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 153px;
+        margin-bottom: 29px;
+    }
+  
+    .login-btn {
+      width: 100%;
+    }
+  
+    .footer-links {
+        flex-direction: column;
+        margin-left: -118px;
+        gap: 10px;
+    }
+  .footer-text{
+    display: none;
+  }
+    .footer-column {
+      margin-bottom: 10px;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+  
+    .social-icons {
+        width: 100%;
+        justify-content: space-evenly;
+      gap: 1px;
+    }
+  
+    .footer-text {
+      width: 100%;
+    }
+  
+    .footer-upper {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 10px;
+    }
+  }
+  

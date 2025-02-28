@@ -1,0 +1,94 @@
+.font-selector-container {
+  background: #f8f8f8;
+    width: 507px;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .font-selector-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .font-section {
+    margin-bottom: 15px;
+  }
+  
+  .font-section h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  /* 🔹 Alert Styling */
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1000;
+}
+
+.alert-warning {
+  background-color: #f3cf42ec;
+  color: black;
+}
+
+  /* Font Dropdown */
+  .font-dropdown {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+  }
+  
+  .font-option {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .font-option:hover,
+  .font-option.active {
+    background: #ebebeb;
+  }
+  
+  .font-icon {
+    background: #f0f0f0;
+    padding: 5px;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  /* Color Picker */
+  .color-picker {
+    display: flex;
+    align-items: center;
+  }
+  
+  .color-picker input {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .color-label {
+    margin-left: 10px;
+    font-size: 14px;
+    background: #f5f5f5;
+    padding: 8px;
+    border-radius: 6px;
+  }
+  

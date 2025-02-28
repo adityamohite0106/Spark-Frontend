@@ -1,0 +1,99 @@
+/* PreviewButtonPopup.css */
+
+/* Preview Button */
+.preview-button {
+  position: fixed;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: rgb(28, 27, 27);
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  font-size: 16px;
+}
+
+.preview-button i {
+  font-size: 16px;
+}
+
+/* Mobile Preview Popup */
+.mobile-preview-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(238, 232, 232, 0.675);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.mobile-preview-popup .mobile-preview {
+  background-color: white;
+  height: 520px;
+  border-radius: 59px;
+  padding: 20px;
+  /* max-width: 90%; */
+  /* max-height: 90%; */
+  /* overflow-y: auto; */
+  /* position: relative; */
+}
+
+/* Close Preview Button */
+.close-preview-button {
+  position: fixed;
+  bottom: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: rgb(28, 27, 27);
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  font-size: 16px;
+}
+
+/* Hide Mobile Preview on Larger Screens */
+/* Hide Mobile Preview Button on Desktop */
+@media screen and (min-width: 768px) {
+  .preview-button {
+    display: none;
+  }
+
+  .mobile-preview-popup {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+  }
+
+  .close-preview-button {
+    display: none;
+  }
+
+  /* ✅ Fix for Chart Container */
+  .chart-container2 {
+    display: flex; /* ✅ Remove !important initially */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+ 
+ 
+}

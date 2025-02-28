@@ -1,0 +1,97 @@
+/* ✅ Main Container */
+.donut-chart-container {
+    width: 100%;
+    max-width: 400px; /* Default large size for desktop */
+    background-color: rgb(245, 245, 245);
+    padding: 15px;
+    height: 292px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+  }
+  
+  /* ✅ Chart Title */
+  .donut-chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* ✅ Chart Wrapper */
+  .donut-chart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* ✅ Donut Chart */
+  .donut-chart {
+    width: 160px;
+    height: 160px;
+  }
+  
+  /* ✅ Labels Container */
+  .donut-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 15px;
+  }
+  
+  /* ✅ Individual Label Item */
+  .donut-label-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+  }
+  
+  /* ✅ Color Indicator */
+  .donut-color-box {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    .donut-chart-container {
+      max-width: 400px;
+      padding: 15px;
+    }
+  
+    .donut-chart-title {
+      font-size: 16px;
+    }
+  
+    .donut-chart {
+      width: 140px;
+      height: 140px;
+    }
+  
+    .donut-label-item {
+      width: 140px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .donut-chart-container {
+      max-width: 90%;
+      padding: 10px;
+    }
+  
+    .donut-chart-title {
+      font-size: 14px;
+    }
+  
+    .donut-chart {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .donut-label-item {
+      width: 120px;
+    }
+  }
+  

@@ -1,0 +1,38 @@
+/* 🌟 Mobile Styles */
+@media screen and (max-width: 768px) {
+
+    /* ✅ Center & Adjust Form Layout */
+    .edit-profile-container {
+      width: 100%;
+      padding: 15px;
+      margin: 50px auto;
+      margin-bottom: 100px;
+    }
+  
+    /* ✅ Adjust Input Fields */
+    .input-group input {
+      width: 100%;  /* Full width */
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    /* ✅ Adjust Save Button */
+    .save-button {
+      width: 100%;
+      margin-left: 0;  /* Reset margin */
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+    }
+  
+    /* ✅ Adjust Title & Underline */
+    .edit-profile-title {
+      font-size: 14px;
+      text-align: center;
+    }
+  
+    .title-underline {
+      margin-bottom: 15px;
+    }
+  }
+  

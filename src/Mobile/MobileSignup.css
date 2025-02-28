@@ -1,0 +1,92 @@
+/* 🌟 Mobile Styles */
+@media screen and (max-width: 768px) {
+
+    /* ✅ Adjust Container Layout */
+    .signup-container {
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+  
+    /* ✅ Center Form Content */
+    .signup-left {
+      padding: 20px;
+      width: 100%;
+      align-items: center;
+    }
+    .signup-left b{
+        color: #737070;
+    padding-right: 94px;
+    }
+    .recaptcha-text2{
+        color: grey;
+    padding-top: 18px !important;
+    margin-left: 1px!important;
+    font-size: 11px !important;
+    }
+    .signup-box {
+      max-width: 100%;
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Input Fields */
+    .signup-container form {
+      width: 100%;
+    }
+  
+    .signup-container input {
+      width: 100%;
+    }
+  
+    /* ✅ Hide Right-Side Image */
+    .signup-right {
+      display: none;
+    }
+  
+    /* ✅ Adjust Button & Text */
+    .signup-btn2,
+    .google-btn {
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Terms & Conditions */
+    .terms {
+        display: grid;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .terms input {
+       
+            width: 20px !important;
+            margin-bottom: 5px;
+
+    }
+  
+    /* ✅ Adjust OR Divider */
+    .or-divider {
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Password Input */
+    .password-input {
+      width: 100%;
+    }
+  
+    .password-input input {
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Error Messages */
+    .error {
+      font-size: 12px;
+      text-align: center;
+    }
+  
+    /* ✅ Remove Overlay (If needed) */
+    .overlay {
+      display: none;
+    }
+  }
+  

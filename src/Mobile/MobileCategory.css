@@ -1,0 +1,67 @@
+/* 🌟 Mobile Styles */
+@media screen and (max-width: 768px) {
+
+    /* ✅ Adjust Wrapper Layout */
+    .category-wrapper {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      padding: 20px;
+    }
+  
+    /* ✅ Adjust Content Section */
+    .category-content {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      margin-top: 0; /* Reset margin */
+    }
+  
+    .category-content h1 {
+      font-size: 22px; /* Adjust font size */
+    }
+  
+    /* ✅ Adjust Input Field */
+    .input-field {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    /* ✅ Adjust Category Buttons */
+    .category-buttons {
+      justify-content: center;
+    }
+  
+    .category-button {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  
+    /* ✅ Adjust Continue Button */
+    .continue-button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    /* ✅ Hide Right-Side Image */
+    .image-container {
+      display: none;
+    }
+  
+    /* ✅ Adjust Logo & Header */
+    .logo-container {
+      text-align: center;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+  
+    .logo-container img {
+      height: 18px;
+    }
+  
+    /* ✅ Adjust Error Alert */
+    .error-alert {
+      font-size: 12px;
+      width: 90%;
+    }
+  }
+  

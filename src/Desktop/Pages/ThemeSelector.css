@@ -1,0 +1,69 @@
+.theme-selector {
+    margin-top: 18px;
+    padding: 23px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    /* text-align: center; */
+}
+
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns in the first row */
+    grid-auto-flow: row;
+    gap: 12px;
+    justify-items: center;
+    max-width: 620px; /* Adjust width if necessary */
+    margin: auto;
+}
+
+.theme-box {
+    width: 106px;
+    height: 156px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Styling when hovering */
+.theme-box:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure proper wrapping for the second row with 3 elements */
+.theme-grid > .theme-box:nth-child(n+5) {
+    grid-column: span 1;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+    .theme-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+  
+  .mobile-preview {
+    /* border: 2px solid #ddd; */
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .mobile-links.stack {
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .theme-image {
+    width: 100%; /* Ensures the image covers the box width */
+    height: 153px; /* Sets fixed height as requested */
+    object-fit: cover; /* Ensures the image covers the box proportionally */
+    border-radius: 8px; /* Optional: Rounds the corners to match the box */
+}

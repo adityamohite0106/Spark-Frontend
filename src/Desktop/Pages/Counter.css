@@ -1,0 +1,124 @@
+/* ✅ Main Container */
+.counter-container {
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 778px; /* Default large size for desktop */
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* ✅ Title */
+.overview-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ✅ Date Picker (Right on Desktop) */
+.date-picker {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 10px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px; /* ✅ Keeps it on the right side */
+}
+
+/* ✅ Stats Container */
+.stats-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ Wrap cards on small screens */
+  margin-top: 50px; /* ✅ Push down stats to avoid overlap */
+}
+
+/* ✅ Individual Stat Card */
+.stat-card {
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 228px;
+  height: 124px;
+  flex: 1; /* ✅ Makes cards flexible */
+}
+
+/* ✅ Green & Light Green Cards */
+.green-card {
+  background-color: #21d17d;
+  color: white;
+}
+
+.light-green-card {
+  background-color: #eaffea;
+  color: black;
+}
+
+/* ✅ Titles & Numbers */
+.stat-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .stats-container {
+   
+    
+  }
+
+  .stat-card {
+    width: 100%; /* ✅ Full width on mobile */
+    min-width: unset;
+    text-align: center;
+  }
+
+  /* ✅ Move Date Picker Below Title and Center it on Mobile */
+  .date-picker {
+    position: static;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-container {
+    padding: 15px;
+    margin-top: 63px;
+  }
+
+  .overview-title {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .stat-title {
+    font-size: 12px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .date-picker {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,169 @@
+.button-appearance-container {
+  background: #f8f8f8;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .button-appearance-container h3 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .button-section {
+    margin-bottom: 10px;
+  }
+  
+  .button-section h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .button-style {
+    padding: 10px 20px;
+    width: 151px;
+    height: 42px;
+    margin-right: 5px;
+    gap: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3sease -in-out;
+    border-radius: 5px;
+}
+  
+  .button-style.fill {
+    background: #000000;
+    color: white;
+  }
+  
+  .button-style.outline {
+    border: 2px solid #000000;
+    background: transparent;
+    color: #000000;
+  }
+  
+  .button-style.hard-shadow {
+    box-shadow: 4px 4px 0px #000000;
+  }
+  
+  .button-style.soft-shadow {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .button-style.soft-shadow2 {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .button-style.soft-shadow3 {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-style.special {
+    background: linear-gradient(45deg, #000000, gray);
+    color: white !important;
+  }
+  
+  .button-style.active {
+    border: 2px solid green; /* Highlight selected button */
+  }
+  
+  .fill {
+    background-color: #000000;
+    color: white;
+  }
+  .fill2{
+    background-color: #000000;
+    color: white;
+    border-radius: 3px;
+  }
+  .fill3{
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .outline {
+    border: 2px solid #000000;
+    background: transparent;
+    color: #000000;
+  }
+  .outline2 {
+    border: 2px solid rgb(226, 113, 113);
+    background: transparent;
+    color: #000000;
+  }
+  .outline3 {
+    border: 2px solid rgb(143, 224, 22);
+    background: transparent;
+    color: #000000;
+  }
+  
+  .hard-shadow {
+    box-shadow: 4px 4px 0px #000000;
+  }
+  .hard-shadow2 {
+    box-shadow: 4px 4px 0px rgb(138, 195, 138);
+    margin-left: 2px;
+  }
+  .hard-shadow3 {
+    box-shadow: 4px 4px 0px rgb(250, 145, 145);
+  }
+  
+  .soft-shadow {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .soft-shadow2 {
+    box-shadow: 2px 3px 6px rgba(110, 227, 139, 0.2);
+  }
+  .soft-shadow3 {
+    box-shadow: 1px 1px 4px rgba(240, 156, 156, 0.2);
+  }
+  
+  .special {
+    background: linear-gradient(45deg, rgb(105, 103, 103), gray);
+    color: white important;
+  }
+
+
+/* CSS */
+.special2 {
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  /* margin: 0; */
+  
+  outline: none;
+  /* padding: 8px .8em; */
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+
+.special3 {
+    background-color: #36A9AE;
+    background-image: linear-gradient(#37ADB2, #329CA0);
+    border: 1px solid #2A8387;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* margin-left: 5px; */
+
+}

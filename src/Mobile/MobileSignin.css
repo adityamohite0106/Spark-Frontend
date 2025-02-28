@@ -1,0 +1,84 @@
+/* 🌟 Mobile Styles */
+@media screen and (max-width: 768px) {
+
+    /* ✅ Adjust Container Layout */
+    .signin-container {
+      height: 100vh;
+      width: 100%;
+        flex-direction: column;
+        align-items: center;
+      
+    }
+    .logo2{
+      width: 100%;
+     
+    }
+    .input-group input {
+      /* width: 332px !important; */
+    }
+
+    /* ✅ Center Form Content */
+    .signin-left {
+      padding: 20px;
+      width: 100%;
+      align-items: center;
+    }
+  
+    .signin-box {
+      max-width: 100%;
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Input Fields */
+    .signin-container form {
+      width: 100%;
+    }
+  
+    .signin-container input {
+      width: 100%;
+    }
+  
+    /* ✅ Hide Right-Side Image */
+    .signin-right {
+      display: none;
+    }
+  
+    /* ✅ Adjust Button & Text */
+    .signin-btn2,
+    .google-btn {
+      width: 100%;
+    }
+  
+    /* ✅ Adjust Recaptcha & Signup Text */
+    .recaptcha-text {
+      font-size: 12px;
+      text-align: center;
+      margin: 15px 0;
+    }
+  
+    .signup-text {
+      font-size: 14px;
+      text-align: center;
+    }
+  
+    .signup-link {
+      font-size: 14px;
+    }
+  
+    /* ✅ Adjust Alert Boxes */
+    .alert-box {
+      width: 90%;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .alert {
+      max-width: 90%;
+    }
+  
+    /* ✅ Remove Overlay (If needed) */
+    .overlay {
+      display: none;
+    }
+  }
+  
