@@ -25,45 +25,43 @@ const Category = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ✅ Redirect if user is NOT authenticated
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (!token) {
       setError("⚠️ Access denied. Please log in first.");
-      setTimeout(() => navigate("/signin"), 2000); // Redirect after 2s
+      setTimeout(() => navigate("/signin"), 2000);
     }
   }, [navigate]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    setError(""); // ✅ Clear error when selecting category
+    setError("");
   };
 
   const handleContinue = async () => {
     setError("");
-  
+
     if (!username.trim()) {
       setError("⚠️ Please enter your username (Firstname).");
       return;
     }
-  
+
     if (!selectedCategory) {
       setError("⚠️ Please select a category.");
       return;
     }
-  
+
     const token = localStorage.getItem("token");
     if (!token) {
       setError("⚠️ No token found. Please log in again.");
       navigate("/signin");
       return;
     }
-  
+
     setLoading(true);
-  
+
     try {
-      const response = await fetch("http://localhost:5000/api/auth/check-user", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/check-user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,31 +69,26 @@ const Category = () => {
         },
         body: JSON.stringify({ firstName: username }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         console.log("✅ User verified:", data.user);
-        
-        // ✅ Store email in localStorage before moving to dashboard
         localStorage.setItem("email", data.user.email);
-  
         navigate("/dashboard");
       } else {
         setError(data.error || "⚠️ Username not found.");
       }
     } catch (err) {
-      console.error("❌ Error checking user:", err);
+      console.error("❌ Error checking user:", err.message);
       setError("⚠️ Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-  
 
   return (
     <div className="category-wrapper">
-   
       {error && <p className="error-alert">{error}</p>}
 
       <div className="logo-container">
@@ -136,7 +129,6 @@ const Category = () => {
         </button>
       </div>
 
-   
       <div className="image-container">
         <img src="/Images/signupimg.png" alt="Signin" />
       </div>
