@@ -93,7 +93,7 @@ const Signin = () => {
           : "⚠️ Server error! Please try again later."
       );
       setAlertType("error");
-      setTimeout(() => setAlertMessage(""), 3000);
+      setTimeout(() => setAlertMessage(""), 30000);
     } finally {
       setLoading(false); // Re-enable button
     }
