@@ -5,6 +5,27 @@ body {
   padding: 0;
 }
 
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.notification.success {
+  background-color: #28a745; /* Green */
+}
+
+.notification.error {
+  background-color: #dc3545; /* Red */
+}
+
 .dashboard-container {
   display: flex;
   /* height: 100vh; */
