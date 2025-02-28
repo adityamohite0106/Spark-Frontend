@@ -242,14 +242,18 @@ const Dashboard = () => {
     localStorage.setItem("showAlert", showAlert);
   }, [showAlert]);
 
+// New state for notifications
+const [notification, setNotification] = useState({ message: "", type: "" });
+  
   const handleSave = async () => {
     try {
       if (!email) {
         console.error("❌ Email is missing. Cannot save data.");
-        alert("Email is required to save data.");
+        setNotification({ message: "Email is required to save data.", type: "error" });
+        setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
         return;
       }
-
+  
       const updatedData = {
         email,
         profile: { profileImage, profileTitle, bio },
@@ -265,25 +269,21 @@ const Dashboard = () => {
         },
         analytics: { clicksOnLinks, clicksOnShop, iconCounts },
         settings: {
-          notificationsEnabled:
-            dashboardData.settings?.notificationsEnabled ?? true,
+          notificationsEnabled: dashboardData.settings?.notificationsEnabled ?? true,
           privacy: dashboardData.settings?.privacy || "public",
         },
       };
-
+  
       console.log("Sending to backend:", JSON.stringify(updatedData, null, 2));
-
+  
       const response = await axios.put(
         `${API_BASE_URL}/api/dashboard?email=${email}`,
         updatedData,
         { headers: { "Content-Type": "application/json" } }
       );
-
-      console.log(
-        "Response from backend:",
-        JSON.stringify(response.data, null, 2)
-      );
-
+  
+      console.log("Response from backend:", JSON.stringify(response.data, null, 2));
+  
       setDashboardData((prevData) => {
         const newData = {
           ...prevData,
@@ -294,15 +294,18 @@ const Dashboard = () => {
         console.log("Updated dashboardData:", JSON.stringify(newData, null, 2));
         return newData;
       });
-
-      localStorage.setItem(
-        "dashboardData",
-        JSON.stringify(response.data.dashboard)
-      );
-      alert("Dashboard saved successfully!");
+  
+      localStorage.setItem("dashboardData", JSON.stringify(response.data.dashboard));
+  
+      // Success notification (green)
+      setNotification({ message: "Dashboard saved successfully!", type: "success" });
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
     } catch (error) {
       console.error("❌ Error saving dashboard data:", error);
-      alert("Failed to save dashboard. Please try again.");
+  
+      // Error notification (red)
+      setNotification({ message: "Failed to save dashboard. Please try again.", type: "error" });
+      setTimeout(() => setNotification({ message: "", type: "" }), 3000); // Clear after 3s
     }
   };
 
@@ -599,13 +602,20 @@ const Dashboard = () => {
         const response = await axios.get(`${API_BASE_URL}/api/dashboard?email=${email}`);
         const fetchedData = response.data;
         console.log("✅ Fetched Dashboard Data from MongoDB:", JSON.stringify(fetchedData, null, 2));
-  
-// Reset blob URLs to default
-if (fetchedData.profile?.profileImage?.startsWith("blob:")) {
-  fetchedData.profile.profileImage = "Images/boyemoji.png";
-  console.log("Reset blob URL to default");
-}
 
+        // Fix profileImage URL if it uses localhost or http
+        if (fetchedData.profile?.profileImage) {
+          let fixedImageUrl = fetchedData.profile.profileImage;
+          if (fixedImageUrl.startsWith("http://localhost:5000") || fixedImageUrl.startsWith("http://")) {
+            fixedImageUrl = fixedImageUrl.replace(
+              /^http:\/\/localhost:5000|^http:\/\/spark-backend-apj9\.onrender\.com/,
+              API_BASE_URL
+            );
+          } else if (!fixedImageUrl.startsWith("https://")) {
+            fixedImageUrl = `${API_BASE_URL}${fixedImageUrl.startsWith("/") ? "" : "/"}${fixedImageUrl}`;
+          }
+          fetchedData.profile.profileImage = fixedImageUrl;
+        }
 
         setDashboardData(fetchedData);
         setProfileImage(fetchedData.profile?.profileImage || "Images/boyemoji.png");
@@ -627,13 +637,13 @@ if (fetchedData.profile?.profileImage?.startsWith("blob:")) {
           YouTube: 0,
           X: 0,
         });
-  
+
         localStorage.setItem("dashboardData", JSON.stringify(fetchedData));
       } catch (error) {
         console.error("❌ Error fetching dashboard data:", error);
       }
     };
-  
+
     fetchDashboardData();
   }, [email]);
 
