@@ -60,49 +60,35 @@ const Signin = () => {
             identifier: formData.identifier.trim(),
             password: formData.password,
           }),
+          credentials: "include", // ✅ Add this if needed for auth
         });
-        
   
         const data = await response.json();
         console.log("🔍 Server Response:", data);
   
         if (response.ok) {
           console.log("🟢 Login Successful:", data);
-          
-          // ✅ Store token and user details
           localStorage.setItem("token", data.token);
           localStorage.setItem("username", data.user.firstName);
-          localStorage.setItem("email", data.user.email); // ✅ Fix: Store email
-          
-          // ✅ Show Success Alert
+          localStorage.setItem("email", data.user.email);
           setAlertMessage(`✅ Welcome, ${data.user.firstName}! Login Successful.`);
           setAlertType("success");
-  
-          // ✅ Redirect to category after 2 seconds
           setTimeout(() => {
             setAlertMessage("");
             navigate("/category");
           }, 2000);
         } else {
           console.error("🛑 Login Failed:", data.error);
-  
-          // ✅ Show Error Alert
           setAlertMessage(`❌ ${data.error || "Invalid credentials. Please try again."}`);
           setAlertType("error");
-  
-          // ✅ Hide error alert after 3 seconds
           setTimeout(() => {
             setAlertMessage("");
           }, 3000);
         }
       } catch (error) {
-        console.error("❌ Network Error:", error);
-  
-        // ✅ Show Server Error Alert
+        console.error("❌ Network/CORS Error:", error.message); // ✅ Better error logging
         setAlertMessage("⚠️ Server error! Please try again later.");
         setAlertType("error");
-  
-        // ✅ Hide alert after 3 seconds
         setTimeout(() => {
           setAlertMessage("");
         }, 3000);
