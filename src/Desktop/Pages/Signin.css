@@ -215,6 +215,9 @@
     cursor: pointer;
     margin-top: 22px;
     margin-bottom: 18px;
+  } 
+ .signin-btn2:hover {
+    background-color: rgba(121, 236, 5, 0.5);
   }
   
   /* OR Divider */
