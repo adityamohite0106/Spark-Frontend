@@ -4,6 +4,7 @@ import Signup from "./Desktop/Components/Signup";
 import Signin from "./Desktop/Components/Signin";
 import Category from "./Desktop/Components/Category";
 import Dashboard from "./Desktop/Pages/Dashboard";
+import MobilePreview from "./Desktop/Components/MobilePreview";
 import ProtectedRoute from "./Desktop/Components/ProtectedRoute"; 
 
 function AppRoutes() {
@@ -14,6 +15,8 @@ function AppRoutes() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
 
+        <Route path="/preview" element={<MobilePreview />} /> 
+        
         <Route element={<ProtectedRoute />}>
           <Route path="/category" element={<Category />} />
           <Route path="/dashboard" element={<Dashboard />} />

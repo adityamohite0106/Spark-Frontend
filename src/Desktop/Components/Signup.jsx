@@ -67,8 +67,6 @@ const Signup = () => {
       try {
         const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`;
 
-        console.log("Attempting to fetch:", apiUrl);
-        console.log("Request Body:", JSON.stringify(formData));
         
   
         const response = await fetch(apiUrl, {
@@ -77,20 +75,20 @@ const Signup = () => {
           body: JSON.stringify(formData),
         });
   
-        console.log("Response Status:", response.status);
+        
   
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
   
         const data = await response.json();
-        console.log("Signup successful:", data);
+     
         localStorage.setItem("token", data.token);
         localStorage.setItem("email", formData.email);
         navigate("/category");
   
       } catch (err) {
-        console.error("Error during signup:", err);
+       
         setErrors((prevErrors) => ({
           ...prevErrors,
           backend: "An error occurred. Please try again.",

@@ -34,25 +34,24 @@ const MobilePreview = ({
 
   // ✅ Detect Screen Size and Reset Preview Visibility on Desktop
   useEffect(() => {
-    const handleResize = () => {
-      const mobileMode = window.innerWidth <= 768;
-      setIsMobile(mobileMode);
-      setIsMobilePreviewVisible(!mobileMode); // ✅ Always show on desktop, toggle on mobile
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("showPopup") === "true") {
+      setIsOverlayActive(true);
+    }
   }, []);
+  
 
   // Function to copy the public shareable link
   const handleShareClick = () => {
-    const publicLink = `${window.location.origin}/preview?user=mobilepreview`;
+    const publicLink = `${window.location.origin}/preview?user=mobilepreview&showPopup=true`;
     navigator.clipboard.writeText(publicLink);
-
+  
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
     }, 3000);
   };
+  
 
   const handleGetConnectedClick = () => {
     setIsOverlayActive(true);

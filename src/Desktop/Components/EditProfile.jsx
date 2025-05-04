@@ -20,7 +20,7 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem("token");
-        console.log("Fetch token:", token);
+       
         if (!token) {
           setAlertMessage("You need to log in first.");
           setAlertType("error");
@@ -38,7 +38,6 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
 
         if (!response.ok) {
           const errorData = await response.json();
-          console.log("Fetch response error:", errorData);
           if (response.status === 401) {
             setAlertMessage("Session expired. Please log in again.");
             setAlertType("error");
@@ -59,7 +58,6 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
           confirmPassword: "",
         });
       } catch (error) {
-        console.error("Error fetching user data:", error);
         setAlertMessage("Cannot update now, please try later."); // Updated message
         setAlertType("error");
         setTimeout(() => setAlertMessage(""), 3000); // Auto-hide after 3s
@@ -85,7 +83,6 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
 
     try {
       const token = localStorage.getItem("token");
-      console.log("Token being sent:", token);
       if (!token) {
         setAlertMessage("You need to log in first.");
         setAlertType("error");
@@ -114,7 +111,6 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.log("Update response error:", errorData);
         if (response.status === 401) {
           setAlertMessage("Session expired. Please log in again.");
           setAlertType("error");
@@ -134,7 +130,7 @@ const EditProfile = ({ email: initialEmail, profileTitle: initialProfileTitle, s
       setAlertType("success");
       setTimeout(() => setAlertMessage(""), 3000);
     } catch (error) {
-      console.error("Error updating profile:", error);
+     
       setAlertMessage("Cannot update now, please try later."); // Updated message
       setAlertType("error");
       setTimeout(() => setAlertMessage(""), 3000); // Auto-hide after 3s

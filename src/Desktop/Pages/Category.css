@@ -1,103 +1,99 @@
 .category-wrapper {
-    display: flex
-    ;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 20px;
-  }
-  
-  .logo-container {
-    display: flex
-;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 37.5rem;
-    padding: 10px;
-    padding-left: 30px;
-  }
-  .error-alert {
-    position: fixed; /* Make it stick at the top */
-    top: 10px; /* Adjust distance from the top */
-    left: 50%; /* Center the alert */
-    transform: translateX(-50%); /* Align center */
-    background-color: #ff4d4d; /* Red background */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 9999; /* Ensure it stays on top */
-    text-align: center;
-    width: 80%;
-    max-width: 400px;
-  }
-  
-  
-  .logo-container img {
-    height: 20px;
-  }
-  
-  .logo-container h2 {
-    font-size: 20px;
-    margin-top: 5px;
-  }
-  
-  .category-content {
-    flex: 1;
-    padding: 0px 50px 50px 50px;
-    margin-top: -155;
-  }
-  .category-content h1{
-padding-bottom: 20px;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 28px 0px 28px 0px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .category-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    /* justify-content: center; */
-    gap: 10px;
-  }
-  
-  .category-button {
-    padding: 10px 15px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    cursor: pointer;
-    background: white;
-    transition: 0.3s ease;
-  }
-  
-  .category-button.active {
-    background: #008000;
-    color: white;
-    border: none;
-  }
-  
-  .continue-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #008000;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .image-container img {
-    height: 643px;
-    width: 490px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 37.5rem;
+  padding: 10px;
+  padding-left: 30px;
+}
+.error-alert {
+  position: fixed; 
+  top: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #ff4d4d; /* Red background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 9999; /* Ensure it stays on top */
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.logo-container img {
+  height: 20px;
+}
+
+.logo-container h2 {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.category-content {
+  flex: 1;
+  padding: 0px 50px 50px 50px;
+  margin-top: -155;
+}
+.category-content h1 {
+  padding-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 28px 0px 28px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  /* justify-content: center; */
+  gap: 10px;
+}
+
+.category-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.category-button.active {
+  background: #008000;
+  color: white;
+  border: none;
+}
+
+.continue-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #008000;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.image-container img {
+  height: 643px;
+  width: 490px;
+}

@@ -103,6 +103,10 @@ input {
   cursor: pointer;
   margin-top: 0.5rem;
 }
+.signup-btn2:hover {
+  background-color: rgba(121, 236, 5, 0.5);
+
+}
 
 /* OR Divider */
 .or-divider {
